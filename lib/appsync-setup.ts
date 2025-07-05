@@ -22,10 +22,10 @@ export class AppsyncSetup {
   }
   setupAppsync() {
     //-------Define roles to access Logs---------
-    const roleApi = new iam.Role(this.stack, "userApiApiRole", {
+    const roleApi = new iam.Role(this.stack, "UserApiRole", {
       assumedBy: new iam.ServicePrincipal("appsync.amazonaws.com"),
       description: "Role to link to user api",
-      roleName: "userApiApiRole",
+      roleName: "userApi-Role",
       inlinePolicies: {
         CloudWatchLogsPolicy: new iam.PolicyDocument({
           statements: [
