@@ -34,9 +34,11 @@ export class LambdaSetup {
     this.lambdasStructure = [
       {
         nameEntity: "house",
-        lambdas: [],
+        lambdas: [
+        ],
         resolvers: {
-          query: [],
+          query: [
+          ],
           mutation: []
         }
       },
@@ -113,7 +115,7 @@ export class LambdaSetup {
         USER_TABLE: userTable.tableName,
         REGION: this.stack.region,
         LOG_LEVEL: this.LOG_LEVEL,
-        SNS_HOUSE_TOPIC: this.snsTopics.find((snsTopic) => snsTopic.name == "UserTopic")?.topicSns.topicArn || '',
+        SNS_USER_TOPIC: this.snsTopics.find((snsTopic) => snsTopic.name == "UserTopic")?.topicSns.topicArn || '',
       },
       role: lambdaRole,
       timeout: lambdaInfo.timeout || this.DEFAULT_TIMEOUT,

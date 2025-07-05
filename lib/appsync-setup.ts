@@ -78,7 +78,7 @@ export class AppsyncSetup {
       this.stack,
       "userApiUrlParameter",
       {
-        parameterName: "/tucanto/appsync/SvcuserApiUrl",
+        parameterName: "/tucanto/appsync/SvcUserApiUrl",
         stringValue: this.userApi.attrGraphQlUrl,
       }
     );
@@ -172,7 +172,6 @@ export class AppsyncSetup {
               #end
 
               $util.toJson($context.result)
-
           `,
       }).addDependency(dataSourceLambda);
     });
