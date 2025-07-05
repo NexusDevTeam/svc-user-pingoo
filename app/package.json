@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^2.18.0",
+    "@aws-sdk/client-dynamodb": "^3.782.0",
+    "@aws-sdk/client-sns": "^3.803.0",
+    "@aws-sdk/lib-dynamodb": "^3.782.0",
+    "@types/aws-lambda": "^8.10.138",
+    "axios": "^1.8.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
