@@ -7,7 +7,7 @@ import { EventBus, Rule, EventPattern } from "aws-cdk-lib/aws-events";
 import { LambdaFunction } from "aws-cdk-lib/aws-events-targets";
 import { LambdaFunctions } from "../types/types";
 export enum EventTypes {
-  CREATE_USER = "s",
+  CREATE_USER = "ss",
   LOGIN_USER = "sl",
   LOGOUT_USER = 'slo'
 }
