@@ -22,10 +22,10 @@ export class AppsyncSetup {
   }
   setupAppsync() {
     //-------Define roles to access Logs---------
-    const roleApi = new iam.Role(this.stack, "userApiApiRole", {
+    const roleApi = new iam.Role(this.stack, "UserApiRole", {
       assumedBy: new iam.ServicePrincipal("appsync.amazonaws.com"),
       description: "Role to link to user api",
-      roleName: "userApiApiRole",
+      roleName: "userApi-Role",
       inlinePolicies: {
         CloudWatchLogsPolicy: new iam.PolicyDocument({
           statements: [
@@ -54,8 +54,7 @@ export class AppsyncSetup {
 
     new appsync.CfnApiKey(this.stack, "userApiKey", {
       apiId: this.userApi.attrApiId,
-      description: "userApiKey",
-      expires: Duration.days(365).toSeconds()
+      description: "userApiKey"
     })
 
     new logs.LogGroup(this.stack, "userApiLogsGroup", {
@@ -78,7 +77,7 @@ export class AppsyncSetup {
       this.stack,
       "userApiUrlParameter",
       {
-        parameterName: "/tucanto/appsync/SvcuserApiUrl",
+        parameterName: "/tucanto/appsync/SvcUserApiUrl",
         stringValue: this.userApi.attrGraphQlUrl,
       }
     );
@@ -172,7 +171,6 @@ export class AppsyncSetup {
               #end
 
               $util.toJson($context.result)
-
           `,
       }).addDependency(dataSourceLambda);
     });
