@@ -30,41 +30,7 @@ interface Identity {
     logins_count: number;
   }
   
-    interface LogDetails {
-      authentication_methods: string[];
-      body: {
-        client_id: string;
-        connection: string;
-        email: string;
-        is_signup: boolean;
-        password: string;
-        tenant: string;
-      };
-    }
-    
-    export interface LogData {
-      client_id: string;
-      client_name: string;
-      connection: string;
-      connection_id: string;
-      date: string;
-      description: string;
-      details: LogDetails;
-      ip: string;
-      strategy: string;
-      strategy_type: string;
-      type: string;
-      user_agent: string;
-      user_id: string;
-      user_name: string;
-      log_id: string;
-      tenant_name: string;
-    }
-    
-    export interface LogDetail {
-      log_id: string;
-      data: LogData;
-    }
+
     
     export interface EventAuth0 {
       version: string;
@@ -75,6 +41,17 @@ interface Identity {
       time: string;
       region: string;
       resources: any[];
-      detail: LogDetail;
+      detail: {
+        id: string;
+        source: string;
+        specversion: string;
+        type: string;
+        time: string;
+        data: {
+          object: UserInfoAuth0;
+        };
+        a0tenant: string;
+        a0stream: string;
+      };
     }
     
