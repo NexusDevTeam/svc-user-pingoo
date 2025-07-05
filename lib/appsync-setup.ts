@@ -54,8 +54,7 @@ export class AppsyncSetup {
 
     new appsync.CfnApiKey(this.stack, "userApiKey", {
       apiId: this.userApi.attrApiId,
-      description: "userApiKey",
-      expires: 3600*24*30
+      description: "userApiKey"
     })
 
     new logs.LogGroup(this.stack, "userApiLogsGroup", {
