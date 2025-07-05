@@ -11,12 +11,6 @@ import { aws_ssm as ssm } from 'aws-cdk-lib';
 export class SvcUserPingooStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    //-----------Setup SSM Parameters--------------
-    new ssm.StringParameter(this, "Auth0EventSource", {
-      parameterName: "/user-pingoo/auth0/eventSource",
-      stringValue: "aws.partner/auth0.com/1234567890/default",
-      description: "Auth0 Event Source for EventBridge"
-    });
     //-----------Setup DynamoDB--------------------
     const dynamoDbSetup = new DynamoDBSetup(this);
     dynamoDbSetup.setupTables();
