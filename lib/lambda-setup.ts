@@ -35,6 +35,9 @@ export class LambdaSetup {
       {
         nameEntity: "house",
         lambdas: [
+          {
+            name: "handleAuth0UserEvent"
+          }
         ],
         resolvers: {
           query: [
