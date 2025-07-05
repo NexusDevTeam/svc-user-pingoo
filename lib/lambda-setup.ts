@@ -53,7 +53,7 @@ export class LambdaSetup {
     this.lambdasStructure.forEach((lambdaEntity) => {
       lambdaEntity.lambdas.forEach((lambda) => {
         const lambdaFunction = this.createLambdaFunction(
-          `lambda/${lambdaEntity.nameEntity}/`,
+          `lambda/`,
           lambda,
           userTable
         );
