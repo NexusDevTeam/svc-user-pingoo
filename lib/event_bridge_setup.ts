@@ -1,14 +1,14 @@
 /**
  * @fileoverview
- * Location: lib/event_bridge__setup.ts
+ * Location: lib/event_bridge_setup.ts
  */
 import { Stack, aws_ssm as ssm } from "aws-cdk-lib";
 import { EventBus, Rule, EventPattern } from "aws-cdk-lib/aws-events";
 import { LambdaFunction } from "aws-cdk-lib/aws-events-targets";
 import { LambdaFunctions } from "../types/types";
 export enum EventTypes {
-  CREATE_USER = "ss",
-  LOGIN_USER = "s",
+  CREATE_USER = "s",
+  LOGIN_USER = "sl",
   LOGOUT_USER = 'slo'
 }
 
