@@ -6,11 +6,6 @@ import { Stack, aws_ssm as ssm } from "aws-cdk-lib";
 import { EventBus, Rule, EventPattern } from "aws-cdk-lib/aws-events";
 import { LambdaFunction } from "aws-cdk-lib/aws-events-targets";
 import { LambdaFunctions } from "../types/types";
-export enum EventTypes {
-  CREATE_USER = "ss",
-  LOGIN_USER = "sl",
-  LOGOUT_USER = 'slo'
-}
 
 export class EventBridgeSetup {
   private stack: Stack;
@@ -45,12 +40,7 @@ export class EventBridgeSetup {
             eventBus,
             eventPattern: {
               source: [eventSource],
-              detailType: ["Auth0 log"],
-              detail: {
-                data: {
-                  type: [EventTypes.CREATE_USER]
-                },
-              },
+              detailType: ["user.created"]
             },
           }
         );
