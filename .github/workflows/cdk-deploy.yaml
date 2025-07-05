@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       APP_NAME: ${{ vars.APP_NAME }}
-      CDK_DEFAULT_ACCOUNT: ${{ vars.AWS_ACCOUNT_ID_DEV }}
-      CDK_DEFAULT_REGION: ${{ vars.AWS_ACCOUNT_REGION_DEV }}
+      CDK_DEFAULT_ACCOUNT: ${{ vars.AWS_ACCOUNT_ID }}
+      CDK_DEFAULT_REGION: ${{ vars.AWS_ACCOUNT_REGION }}
       ENV: dev
 
     steps:
