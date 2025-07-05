@@ -48,8 +48,7 @@ export class EventBridgeSetup {
               detailType: ["Auth0 log"],
               detail: {
                 data: {
-                  type: 
-                  [EventTypes.CREATE_USER]
+                  type: [EventTypes.CREATE_USER]
                 },
               },
             },
